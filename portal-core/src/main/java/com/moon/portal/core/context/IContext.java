@@ -122,7 +122,7 @@ public interface IContext {
      *
      * @return is release request
      */
-    boolean releaseRequest();
+    boolean isReleaseRequest();
 
     /**
      * 设置异步回调函数
