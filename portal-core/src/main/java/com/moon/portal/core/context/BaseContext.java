@@ -2,7 +2,6 @@ package com.moon.portal.core.context;
 
 import io.netty.channel.ChannelHandlerContext;
 
-import java.security.AllPermission;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
