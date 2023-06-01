@@ -6,7 +6,7 @@ package com.moon.portal.common.utils;
  */
 public class TimeUtil {
 
-    public long currentTimeMillis() {
+    public static long currentTimeMillis() {
         return System.currentTimeMillis();
     }
 }
