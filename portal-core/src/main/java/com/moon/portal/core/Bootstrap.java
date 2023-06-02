@@ -8,7 +8,8 @@ public class Bootstrap {
 
     public static void main(String[] args) {
         // 加载静态配置
-
+        Config config = ConfigLoader.getInstance().load(args);
+        System.out.println(config.getPort());
         // 初始化网关插件
 
         // 加载配置中心管理器，获取动态配置，监听配置中心
