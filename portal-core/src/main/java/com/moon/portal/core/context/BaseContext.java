@@ -53,7 +53,7 @@ public class BaseContext implements IContext {
     /**
      * 资源是否已经释放
      */
-    protected final AtomicBoolean releaseRequest = new AtomicBoolean(false);
+    protected final AtomicBoolean requestRelease = new AtomicBoolean(false);
 
     public BaseContext(String protocol, ChannelHandlerContext nettyCtx, boolean keepAlive) {
         this.protocol = protocol;
@@ -118,7 +118,6 @@ public class BaseContext implements IContext {
 
     @Override
     public void setResponse(Object response) {
-
     }
 
     @Override
@@ -142,8 +141,8 @@ public class BaseContext implements IContext {
     }
 
     @Override
-    public boolean isReleaseRequest() {
-        return this.releaseRequest.get();
+    public boolean releaseRequest() {
+        return false;
     }
 
     @Override
@@ -159,5 +158,9 @@ public class BaseContext implements IContext {
         if (completedCallBacks != null) {
             completedCallBacks.forEach(callback -> callback.accept(this));
         }
+    }
+
+    Object getAttribute(String key) {
+        return attributes.get(key);
     }
 }

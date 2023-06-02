@@ -118,11 +118,10 @@ public interface IContext {
     boolean isKeepAlive();
 
     /**
-     * 是否释放连接资源
-     *
-     * @return is release request
+     * 释放连接资源
+     * @return 资源是否释放成功
      */
-    boolean isReleaseRequest();
+    boolean releaseRequest();
 
     /**
      * 设置异步回调函数
